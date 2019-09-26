@@ -47,6 +47,8 @@ function wikipress_setup(){
     add_theme_support( 'automatic-feed-links' );
 
     load_theme_textdomain('wikipress', get_template_directory() . '/languages');
+
+    add_theme_support( 'title-tag' );
 }
 
 // Customizer
