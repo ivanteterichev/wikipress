@@ -52,8 +52,8 @@
     </style>
 </head>
 <body>
-    <h1>Page Not Found</h1>
-    <p>Sorry, the page you tried to view does not exist.</p>
+    <h1><?php echo __('Page Not Found', 'wikipress'); ?></h1>
+    <p><?php echo __( 'Sorry, the page you tried to view does not exist.', 'wikipress'); ?></p>
 </body>
 </html>
 <!-- IE needs 512+ bytes: https://blogs.msdn.microsoft.com/ieinternals/2010/08/18/friendly-http-error-pages/ -->

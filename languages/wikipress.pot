@@ -1,0 +1,64 @@
+# MEDICITI LITE WORDPRESS MEDICAL THEME.
+# Copyright (C) 2018 Yudlee Themes
+# This file is distributed under the GNU General Public License v3 or Later.
+# YUDLEE THEMES <INFO@YUDLEETHEMES.COM>, 2018.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Wikipress 1.0.0\n"
+"Report-Msgid-Bugs-To: info@yudleethemes.com\n"
+"POT-Creation-Date: 2019-09-26 10:16+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: YUDLEE THEMES <INFO@YUDLEETHEMES.COM>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Loco https://localise.biz/\n"
+"Language: "
+
+#: 404.php:55
+msgid "Page Not Found"
+msgstr ""
+
+#: 404.php:56
+msgid "Sorry, the page you tried to view does not exist."
+msgstr ""
+
+#: footer.php:7 sidebar.php:6
+msgid "Logo"
+msgstr ""
+
+#: front-page.php:65
+msgid "More"
+msgstr ""
+
+#: header.php:34
+msgid ""
+"Keyword, for example, &laquo;Salary&raquo;, &laquo;Promotion&raquo;, &laquo;"
+"About the company&raquo;"
+msgstr ""
+
+#: sidebar.php:11
+msgid "Search"
+msgstr ""
+
+#. Name of the theme
+msgid "wikipress"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"Wikipress, this simple and sophisticated solution for implementing a wiki "
+"portal."
+msgstr ""
+
+#. Author of the theme
+msgid "Andrey Korneev, Ivan Teterichev, Eugene Shangin"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://jumpnet.ru/"
+msgstr ""
