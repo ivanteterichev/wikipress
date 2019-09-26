@@ -1,0 +1,101 @@
+.header {
+  height: 360px;
+  background-color: $AccentColor;
+  text-align: center;
+  padding: 25px;
+  .header__title h1 {
+    color: $InvertTextColor;
+  }
+  .header-input__search-field {
+    z-index: 3;
+  }
+  .header-input__search-result {
+    width: 540px;
+    margin-top: 52.5px;
+    position: absolute;
+    background: $ThemeColor;
+    z-index: 2;
+    padding: 15px 20px 15px 20px;
+    text-align: left;
+    display: none;
+    max-height: 600px;
+    overflow-y: hidden;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    border-radius: 2px;
+    li {
+      width: 100%;
+      height: auto;
+      padding: 10px 0;
+      list-style:none;
+      border-bottom: 1px solid $SearchLineColor;
+      a {
+        padding: 10px 0;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      p {
+        font-size: 12px;
+        line-height: 1.7;
+      }
+    }
+    li::before {
+      display: none;
+    }
+  }
+  .header-input__search-result:hover {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -moz-overflow-scrolling: touch;
+    -ms-overflow-scrolling: touch;
+    -o-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+  }
+  .header-input__search-result::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+  }
+  .header-input__search-result::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,0.5);
+  }
+  .no-search-result {
+    text-align: center;
+    line-height: 1.7;
+  }
+}
+
+@media (min-width: 1601px) and (max-width: 1824px) {
+  .header__input > input[type="text"] {
+    width: 450px;
+  }
+  .header-input__search-result {
+    width: 450px !important;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .header__input > input[type="text"] {
+    width: 405px;
+  }
+  .header-input__search-result {
+    width: 405px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .header__input > input[type="text"] {
+    width: 340px;
+  }
+  .header-input__search-result {
+    width: 340px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .header__input > input[type="text"] {
+    width: 280px;
+  }
+  .header-input__search-result {
+    width: 280px !important;
+  }
+}

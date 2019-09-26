@@ -52,7 +52,7 @@
                 ) );
             ?>
             <?php foreach( $posts as $k2 => $post ): ?>
-                <div class="subsection card-wrapper col-xl-4 col-lg-12">
+                <div id="post-<?php the_ID(); ?>" <?php post_class(['subsection', 'card-wrapper', 'col-xl-4', 'col-lg-12']); ?>">
 					<div class="card d-flex">
 						<div class="card__title">
 							<h4><?php the_title(); ?></h4>

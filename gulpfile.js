@@ -32,8 +32,8 @@ gulp.task('scripts_core', function () {
         .pipe(gulp.dest('assets/js/core'))
 });
 
-gulp.task('watch', ['css', 'scripts'], function () {
-    gulp.watch('src/scss/**/*.scss', ['css'])
+gulp.task('watch', ['sass', 'scripts'], function () {
+    gulp.watch('src/scss/**/*.scss',['sass'])
     gulp.watch('src/js/**/*.js', ['scripts'])
 });
 

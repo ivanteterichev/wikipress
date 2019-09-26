@@ -10,7 +10,12 @@ Text Domain: wikipress
 Tags: custom-colors, custom-header, custom-menu, custom-logo, education, three-columns
 */
 
+@import "vars.scss";
 @import "common.scss";
-@import "aside.scss";
-@import "main.scss";
-@import "article.scss";
+
+@import "blocks/header";
+@import "blocks/footer";
+@import "blocks/aside";
+@import "blocks/article";
+@import "blocks/section";
+@import "blocks/card";

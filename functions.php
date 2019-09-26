@@ -63,7 +63,7 @@ function wikipress_customize_register($wp_customize){
         'type'     => 'text',
         'priority' => 9,
     ] );
-    
+
     /* Color theme */
     $wp_customize->add_setting('wikipress_theme_color', array(
         'default' => '#e77e22',
