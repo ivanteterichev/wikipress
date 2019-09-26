@@ -27,4 +27,13 @@
 		</div>
         <p>Last Modified Date: <?php the_modified_date("d-m-Y"); ?></p>
 	</div>
+    <div style="display:flex;justify-content: space-between;"><?php 
+        if( get_previous_post_link() ){
+            previous_post_link('%link', '&laquo; %title', 1);
+        }
+        if( get_next_post_link() ){
+            next_post_link('%link', '%title &raquo;', 1);
+        }
+    ?></div>
+    
 <?php get_footer(); ?>
