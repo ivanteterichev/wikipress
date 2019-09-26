@@ -23,8 +23,8 @@
             <div class="col-12">
                 <div class="header__title">
                     <h1>
-                        <span id="text-h1"><?php echo __(get_theme_mod('wikipress_text_H1'), 'wikipress'); ?></span>
-                        <?php echo __(get_bloginfo('name'), 'wikipress'); ?>
+                        <span id="text-h1"><?php echo get_theme_mod('wikipress_text_H1'); ?></span>
+                        <?php echo get_bloginfo('name'); ?>
                     </h1>
                 </div>
             </div>
