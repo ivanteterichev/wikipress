@@ -169,3 +169,63 @@ function wikipress_ajax_search(){
 }
 add_action('wp_ajax_nopriv_ajax_search','wikipress_ajax_search');
 add_action('wp_ajax_ajax_search','wikipress_ajax_search');
+
+function wikipress_comment($comment, $args, $depth) {
+    $GLOBALS['comment'] = $comment;
+    switch ( $comment->comment_type ) :
+        case '' :
+?>
+       <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+            <div id="comment-<?php comment_ID(); ?>" class="comment-body">
+                <div class="comment-author vcard">
+                    <?php echo get_avatar( $comment->comment_author_email, $args['avatar_size']); ?>
+                    <?php printf(__('<cite class="fn">%s:</cite>&nbsp;', 'wikipress'), get_comment_author_link()) ?>
+                    <?php edit_comment_link( _e( 'Edit', 'wikipress' ), ' ' ); ?>
+                </div>
+ 
+                <div class="comment-meta commentmetadata">
+                    <?php printf(__('%1$s at %2$s', 'wikipress'), get_comment_date(),  get_comment_time()); ?>
+                </div>
+ 
+<?php if ($comment->comment_approved == '0') : ?>
+                <div class="comment-awaiting-verification"><?php _e('Your comment is awaiting moderation.', 'wikipress') ?></div>
+             <br />
+<?php endif; ?>
+                <?php comment_text() ?>
+                <div class="reply">
+                    <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+                </div>
+            </div>
+ 
+<?php
+        break;
+        case 'pingback'  :
+        case 'trackback' :
+?>
+            <li class="post pingback">
+                <?php comment_author_link(); ?>
+                <?php edit_comment_link( __( 'Edit', 'wikipress' ), ' ' ); ?>
+<?php
+        break;
+    endswitch;
+}
+
+
+add_filter('comment_form_fields', 'wikipress_comment_fields' );
+function wikipress_comment_fields( $fields ){
+
+	$new_fields = array();
+
+	$myorder = array('author','email','url','comment');
+
+	foreach( $myorder as $key ){
+		$new_fields[ $key ] = $fields[ $key ];
+		unset( $fields[ $key ] );
+	}
+
+	if( $fields )
+		foreach( $fields as $key => $val )
+			$new_fields[ $key ] = $val;
+
+	return $new_fields;
+}

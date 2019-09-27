@@ -43,4 +43,5 @@
     <?php if( get_the_tags() ): ?>
     <div class="container"><p><?php the_tags(); ?></p></div>
     <?php endif; ?>
+    <div class="container"><?php comments_template('', true); ?></div>
 <?php get_footer(); ?>
