@@ -32,6 +32,10 @@ function wikipress_scripts(){
         ,false
         ,'in_footer'
     );
+    
+    if (is_singular()) {
+        wp_enqueue_script('comment-reply');
+    }
 }
 
 /* Connecting theme support */
@@ -95,34 +99,44 @@ function wikipress_customize_css(){
     <style type="text/css">
         header,
         [data-theme-color="bg"] {
-            background-color: <?php get_theme_mod('wikipress_theme_color'); ?>
+            background-color: <?php get_theme_mod('wikipress_theme_color'); ?>;
         }
         .card a {
-            color: <?php get_theme_mod('wikipress_theme_color'); ?>
+            color: <?php get_theme_mod('wikipress_theme_color'); ?>;
         }
 
-
-
         [data-theme-color="text"] {
-            color: <?php get_theme_mod('wikipress_theme_color'); ?>
+            color: <?php get_theme_mod('wikipress_theme_color'); ?>;
         }
 
         blockquote {
-            border-left-color: <?php get_theme_mod('wikipress_theme_color'); ?>
+            border-left-color: <?php get_theme_mod('wikipress_theme_color'); ?>;
         }
 
         .wp-block-button a {
-            background-color: <?php get_theme_mod('wikipress_theme_color'); ?>
+            background-color: <?php get_theme_mod('wikipress_theme_color'); ?>;
         }
 
         ul li:before,
         ol li:before {
-            color: <?php get_theme_mod('wikipress_theme_color'); ?>
+            color: <?php get_theme_mod('wikipress_theme_color'); ?>;
         }
 
         figure.wp-block-pullquote {
             border-top-color: <?php get_theme_mod('wikipress_theme_color'); ?>;
-            border-bottom-color: <?php get_theme_mod('wikipress_theme_color'); ?>
+            border-bottom-color: <?php get_theme_mod('wikipress_theme_color'); ?>;
+        }
+        
+        cite.fn a {
+            color: <?php get_theme_mod('wikipress_theme_color'); ?>;
+        }
+        
+        div.wikipress-list-comments a {
+            color: <?php get_theme_mod('wikipress_theme_color'); ?>;
+        }
+        
+        #submit {
+            background-color: <?php get_theme_mod('wikipress_theme_color'); ?>;
         }
     </style>
     <?php
@@ -180,7 +194,7 @@ function wikipress_comment($comment, $args, $depth) {
                 <div class="comment-author vcard">
                     <?php echo get_avatar( $comment->comment_author_email, $args['avatar_size']); ?>
                     <?php printf(__('<cite class="fn">%s:</cite>&nbsp;', 'wikipress'), get_comment_author_link()) ?>
-                    <?php edit_comment_link( _e( 'Edit', 'wikipress' ), ' ' ); ?>
+                    <?php echo edit_comment_link( __( 'Edit', 'wikipress' ), ' ' ); ?>
                 </div>
  
                 <div class="comment-meta commentmetadata">
