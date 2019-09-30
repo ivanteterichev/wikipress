@@ -32,6 +32,10 @@ function wikipress_scripts(){
         ,false
         ,'in_footer'
     );
+    
+    if (is_singular()) {
+        wp_enqueue_script('comment-reply');
+    }
 }
 
 /* Connecting theme support */
@@ -100,8 +104,6 @@ function wikipress_customize_css(){
         .card a {
             color: <?php get_theme_mod('wikipress_theme_color'); ?>
         }
-
-
 
         [data-theme-color="text"] {
             color: <?php get_theme_mod('wikipress_theme_color'); ?>
@@ -180,7 +182,7 @@ function wikipress_comment($comment, $args, $depth) {
                 <div class="comment-author vcard">
                     <?php echo get_avatar( $comment->comment_author_email, $args['avatar_size']); ?>
                     <?php printf(__('<cite class="fn">%s:</cite>&nbsp;', 'wikipress'), get_comment_author_link()) ?>
-                    <?php edit_comment_link( _e( 'Edit', 'wikipress' ), ' ' ); ?>
+                    <?php echo edit_comment_link( __( 'Edit', 'wikipress' ), ' ' ); ?>
                 </div>
  
                 <div class="comment-meta commentmetadata">
