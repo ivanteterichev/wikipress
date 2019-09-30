@@ -59,13 +59,13 @@ add_action('customize_register', 'wikipress_customize_register');
 function wikipress_customize_register($wp_customize){
     /* Greetings in a head */
     $wp_customize->add_setting( 'wikipress_text_H1', [
-        'default'            => 'Welcome',
+        'default'            => __('Welcome', 'wikipress'),
         'sanitize_callback'  => 'sanitize_text_field',
         'transport'          => 'postMessage',
     ] );
     $wp_customize->add_control( 'wikipress_text_H1', [
         'section'  => 'title_tagline',
-        'label'    => 'Greetings in a head',
+        'label'    => __('Greetings in a head', 'wikipress'),
         'type'     => 'text',
         'priority' => 9,
     ] );
@@ -81,7 +81,7 @@ function wikipress_customize_register($wp_customize){
             $wp_customize,
             'wikipress_theme_color',
             array(
-                'label'   => 'Color theme',
+                'label'   => __('Color theme', 'wikipress'),
                 'section' => 'title_tagline',
                 'setting' => 'wikipress_theme_color',
             )
@@ -130,7 +130,7 @@ function wikipress_customize_css(){
 
 add_action('customize_preview_init', 'wikipress_customize_js');
 function wikipress_customize_js(){
-    wp_enqueue_script('wikipress-customizer', get_template_directory_uri() . '/assets/js/wikipress-customize.js', array( 'jquery','customize-preview' ),	'', true);
+    wp_enqueue_script('wikipress-customizer', get_template_directory_uri() . '/assets/js/wikipress-customize.js', array( 'jquery','customize-preview' ), '', true);
 }
 
 // AJAX site search
@@ -160,7 +160,7 @@ function wikipress_ajax_search(){
     else {
             ?>
         <li>
-            <a href="#">Nothing found, try another query</a>
+            <a href="#"><?php _e('Nothing found, try another query', 'wikipress'); ?></a>
         </li>
         <?php
     }
@@ -169,3 +169,63 @@ function wikipress_ajax_search(){
 }
 add_action('wp_ajax_nopriv_ajax_search','wikipress_ajax_search');
 add_action('wp_ajax_ajax_search','wikipress_ajax_search');
+
+function wikipress_comment($comment, $args, $depth) {
+    $GLOBALS['comment'] = $comment;
+    switch ( $comment->comment_type ) :
+        case '' :
+?>
+       <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+            <div id="comment-<?php comment_ID(); ?>" class="comment-body">
+                <div class="comment-author vcard">
+                    <?php echo get_avatar( $comment->comment_author_email, $args['avatar_size']); ?>
+                    <?php printf(__('<cite class="fn">%s:</cite>&nbsp;', 'wikipress'), get_comment_author_link()) ?>
+                    <?php edit_comment_link( _e( 'Edit', 'wikipress' ), ' ' ); ?>
+                </div>
+ 
+                <div class="comment-meta commentmetadata">
+                    <?php printf(__('%1$s at %2$s', 'wikipress'), get_comment_date(),  get_comment_time()); ?>
+                </div>
+ 
+<?php if ($comment->comment_approved == '0') : ?>
+                <div class="comment-awaiting-verification"><?php _e('Your comment is awaiting moderation.', 'wikipress') ?></div>
+             <br />
+<?php endif; ?>
+                <?php comment_text() ?>
+                <div class="reply">
+                    <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+                </div>
+            </div>
+ 
+<?php
+        break;
+        case 'pingback'  :
+        case 'trackback' :
+?>
+            <li class="post pingback">
+                <?php comment_author_link(); ?>
+                <?php edit_comment_link( _e( 'Edit', 'wikipress' ), ' ' ); ?>
+<?php
+        break;
+    endswitch;
+}
+
+
+add_filter('comment_form_fields', 'wikipress_comment_fields' );
+function wikipress_comment_fields( $fields ){
+
+	$new_fields = array();
+
+	$myorder = array('author','email','url','comment');
+
+	foreach( $myorder as $key ){
+		$new_fields[ $key ] = $fields[ $key ];
+		unset( $fields[ $key ] );
+	}
+
+	if( $fields )
+		foreach( $fields as $key => $val )
+			$new_fields[ $key ] = $val;
+
+	return $new_fields;
+}

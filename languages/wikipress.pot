@@ -62,3 +62,51 @@ msgstr ""
 #. Author URI of the theme
 msgid "https://jumpnet.ru/"
 msgstr ""
+
+#: comments.php:1
+msgid "Comments on the post"
+msgstr ""
+
+#: comments.php:8
+msgid "Reply to comment"
+msgstr ""
+
+#: comments.php:17
+msgid "No comments"
+msgstr ""
+
+#: functions.php:183
+msgid "Edit"
+msgstr ""
+
+#: functions.php:207
+msgid "Edit"
+msgstr ""
+
+#: functions.php:191
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:62
+msgid "Welcome"
+msgstr ""
+
+#: functions.php:68
+msgid "Greetings in a head"
+msgstr ""
+
+#: functions.php:84
+msgid "Color theme"
+msgstr ""
+
+#: functions.php:163
+msgid "Nothing found, try another query"
+msgstr ""
+
+#: single.php:17
+msgid "Home"
+msgstr ""
+
+#: single.php:30
+msgid "Last Modified Date"
+msgstr ""
