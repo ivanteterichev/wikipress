@@ -3,17 +3,14 @@
     wp.customize( 'wikipress_theme_color', function( value ) {
         value.bind( function( newval ) {
             /* front-page.php */
-            $('header, [data-theme-color="bg"]')
-                .css('background-color', newval);
-            $('.card a, [data-theme-color="text"]')
-                .css('color', newval);
+            $('header, [data-theme-color="bg"]').css('background-color', newval);
+            
+            $('.card a, [data-theme-color="text"]').css('color', newval);
                 
             /* single.php */
-            $('blockquote')
-                .css('border-left-color', newval);
+            $('blockquote').css('border-left-color', newval);
                 
-            $('.wp-block-button a')
-                .css('background-color', newval);
+            $('.wp-block-button a').css('background-color', newval);
                 
             $('#before-elements')
                 .text('ul li:before, ol li:before{color:' + newval + '}');
@@ -23,6 +20,12 @@
                     'border-top-color': newval,
                     'border-bottom-color': newval
                 });
+                
+            $('cite.fn a').css('color', newval);
+                
+            $('div.wikipress-list-comments a').css('color', newval);
+                
+            $('#submit').css('background-color', newval);
         } );
     } );
     

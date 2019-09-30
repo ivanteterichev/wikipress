@@ -99,32 +99,44 @@ function wikipress_customize_css(){
     <style type="text/css">
         header,
         [data-theme-color="bg"] {
-            background-color: <?php get_theme_mod('wikipress_theme_color'); ?>
+            background-color: <?php get_theme_mod('wikipress_theme_color'); ?>;
         }
         .card a {
-            color: <?php get_theme_mod('wikipress_theme_color'); ?>
+            color: <?php get_theme_mod('wikipress_theme_color'); ?>;
         }
 
         [data-theme-color="text"] {
-            color: <?php get_theme_mod('wikipress_theme_color'); ?>
+            color: <?php get_theme_mod('wikipress_theme_color'); ?>;
         }
 
         blockquote {
-            border-left-color: <?php get_theme_mod('wikipress_theme_color'); ?>
+            border-left-color: <?php get_theme_mod('wikipress_theme_color'); ?>;
         }
 
         .wp-block-button a {
-            background-color: <?php get_theme_mod('wikipress_theme_color'); ?>
+            background-color: <?php get_theme_mod('wikipress_theme_color'); ?>;
         }
 
         ul li:before,
         ol li:before {
-            color: <?php get_theme_mod('wikipress_theme_color'); ?>
+            color: <?php get_theme_mod('wikipress_theme_color'); ?>;
         }
 
         figure.wp-block-pullquote {
             border-top-color: <?php get_theme_mod('wikipress_theme_color'); ?>;
-            border-bottom-color: <?php get_theme_mod('wikipress_theme_color'); ?>
+            border-bottom-color: <?php get_theme_mod('wikipress_theme_color'); ?>;
+        }
+        
+        cite.fn a {
+            color: <?php get_theme_mod('wikipress_theme_color'); ?>;
+        }
+        
+        div.wikipress-list-comments a {
+            color: <?php get_theme_mod('wikipress_theme_color'); ?>;
+        }
+        
+        #submit {
+            background-color: <?php get_theme_mod('wikipress_theme_color'); ?>;
         }
     </style>
     <?php
