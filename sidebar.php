@@ -3,12 +3,12 @@
         <?php if (has_custom_logo()) : the_custom_logo(); else: ?>
             <a class='logo-link' href='/index.php'>
                 <img src="<?php echo get_template_directory_uri() . '/img/logo-footer.png'; ?>"
-                     alt="<?php echo __('Logo', 'wikipress'); ?>">
+                     alt="<?php _e('Logo', 'wikipress'); ?>">
             </a>
         <?php endif; ?>
     </div>
     <div class="aside__element d-flex justify-content-center">
-        <input class="aside__search-field" type="text" placeholder="<?php echo __( 'Search', 'wikipress'); ?>">
+        <input class="aside__search-field" type="text" placeholder="<?php _e( 'Search', 'wikipress'); ?>">
         <ul class="aside__search-result"></ul>
     </div>
     <div class="aside__element d-flex">

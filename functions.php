@@ -59,13 +59,13 @@ add_action('customize_register', 'wikipress_customize_register');
 function wikipress_customize_register($wp_customize){
     /* Greetings in a head */
     $wp_customize->add_setting( 'wikipress_text_H1', [
-        'default'            => 'Welcome',
+        'default'            => __('Welcome', 'wikipress'),
         'sanitize_callback'  => 'sanitize_text_field',
         'transport'          => 'postMessage',
     ] );
     $wp_customize->add_control( 'wikipress_text_H1', [
         'section'  => 'title_tagline',
-        'label'    => 'Greetings in a head',
+        'label'    => __('Greetings in a head', 'wikipress'),
         'type'     => 'text',
         'priority' => 9,
     ] );
@@ -81,7 +81,7 @@ function wikipress_customize_register($wp_customize){
             $wp_customize,
             'wikipress_theme_color',
             array(
-                'label'   => 'Color theme',
+                'label'   => __('Color theme', 'wikipress'),
                 'section' => 'title_tagline',
                 'setting' => 'wikipress_theme_color',
             )
@@ -130,7 +130,7 @@ function wikipress_customize_css(){
 
 add_action('customize_preview_init', 'wikipress_customize_js');
 function wikipress_customize_js(){
-    wp_enqueue_script('wikipress-customizer', get_template_directory_uri() . '/assets/js/wikipress-customize.js', array( 'jquery','customize-preview' ),	'', true);
+    wp_enqueue_script('wikipress-customizer', get_template_directory_uri() . '/assets/js/wikipress-customize.js', array( 'jquery','customize-preview' ), '', true);
 }
 
 // AJAX site search
@@ -160,7 +160,7 @@ function wikipress_ajax_search(){
     else {
             ?>
         <li>
-            <a href="#">Nothing found, try another query</a>
+            <a href="#"><?php _e('Nothing found, try another query', 'wikipress'); ?></a>
         </li>
         <?php
     }
@@ -204,7 +204,7 @@ function wikipress_comment($comment, $args, $depth) {
 ?>
             <li class="post pingback">
                 <?php comment_author_link(); ?>
-                <?php edit_comment_link( __( 'Edit', 'wikipress' ), ' ' ); ?>
+                <?php edit_comment_link( _e( 'Edit', 'wikipress' ), ' ' ); ?>
 <?php
         break;
     endswitch;

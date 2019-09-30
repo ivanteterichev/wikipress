@@ -61,7 +61,7 @@ $categories = get_categories(array(
                                     <h5><?php the_excerpt(); ?></h5>
                                 </div>
                                 <div class="card__link">
-                                    <a href="<?php the_permalink($post->ID); ?>"><?php echo __('More', 'wikipress'); ?> &#8594;</a>
+                                    <a href="<?php the_permalink($post->ID); ?>"><?php _e('More', 'wikipress'); ?> &#8594;</a>
                                 </div>
                             </div>
                         </div>

@@ -14,7 +14,7 @@
     <div class="container article-wrapper">
         <div class="article-wrapper__navigation">
             <span class="article-wrapper-navigation article-wrapper-navigation__chapter"><a
-                        href="<?php echo get_site_url(); ?>" style="display:inline;padding:0;">Home</a></span>
+                        href="<?php echo get_site_url(); ?>" style="display:inline;padding:0;"><?php _e('Home', 'wikipress'); ?></a></span>
             <img src="<?php echo get_template_directory_uri() . '/assets/img/navigation.png' ?>">
             <span class="article-wrapper-navigation article-wrapper-navigation__article"
                   data-theme-color="text"><?php single_post_title(); ?></span>
@@ -27,7 +27,7 @@
                 <?php the_content(); ?>
             <?php endif; ?>
         </div>
-        <p>Last Modified Date: <?php the_modified_date("d-m-Y"); ?></p>
+        <p><?php _e('Last Modified Date', 'wikipress'); ?>: <?php the_modified_date("d-m-Y"); ?></p>
     </div>
     <div class="container">
         <div style="display:flex;justify-content:space-between;">
