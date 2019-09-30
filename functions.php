@@ -138,6 +138,10 @@ function wikipress_customize_css(){
         #submit {
             background-color: <?php get_theme_mod('wikipress_theme_color'); ?>;
         }
+        
+        .wikipress-post-navigation a {
+            color: <?php get_theme_mod('wikipress_theme_color'); ?>;
+        }
     </style>
     <?php
 }

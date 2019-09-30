@@ -26,6 +26,8 @@
             $('div.wikipress-list-comments a').css('color', newval);
                 
             $('#submit').css('background-color', newval);
+            
+            $('.wikipress-post-navigation a').css('color', newval);
         } );
     } );
     
