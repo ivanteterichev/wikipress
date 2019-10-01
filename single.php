@@ -30,7 +30,7 @@
         <p><?php _e('Last Modified Date', 'wikipress'); ?>: <?php the_modified_date("d-m-Y"); ?></p>
     </div>
     <div class="container">
-        <div style="display:flex;justify-content:space-between;">
+        <div style="display:flex;justify-content:space-between;" class="wikipress-post-navigation">
             <?php
             if (get_previous_post_link()) {
                 previous_post_link('%link', '&laquo; %title', 1);
@@ -41,7 +41,7 @@
             ?></div>
     </div>
     <?php if( get_the_tags() ): ?>
-    <div class="container"><p><?php the_tags(); ?></p></div>
+    <div class="container"><p><?php the_tags( null, '', '' ); ?></p></div>
     <?php endif; ?>
     <div class="container"><?php comments_template('', true); ?></div>
 <?php get_footer(); ?>
