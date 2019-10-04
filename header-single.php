@@ -1,3 +1,6 @@
+<?php
+load_template( get_template_directory().'/include/login.php', true );
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>

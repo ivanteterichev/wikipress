@@ -1,3 +1,6 @@
+<?php
+load_template( get_template_directory().'/include/login.php', true );
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -5,7 +8,6 @@
     <meta name="viewport" content="width=device-width">
     <?php wp_head(); ?>
 </head>
-<body>
 <body <?php body_class(); ?>>
 <?php get_sidebar(); ?>
 <div class="page-content-wrapper">

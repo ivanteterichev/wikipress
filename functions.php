@@ -1,4 +1,45 @@
 <?php
+/*
+if( !current_user_can('manage_options') ){
+    //wp_redirect( site_url().'/login/' );
+    load_template( get_template_directory().'/login.php', true );
+    exit;
+}
+*/
+
+
+/* пользователь авторизован */
+//if( is_user_logged_in() ){
+    /* пользователь админ */
+//    if( current_user_can('manage_options') ){
+//        wp_redirect( admin_url() );
+//    }
+    /* пользователь не админ */
+//    else{
+//        wp_redirect( site_url() );
+//    }
+//}
+//else{
+    //load_template( get_template_directory().'/include/authorize.php', true );
+    //exit;
+//}
+
+
+
+
+
+## Оставляет пользователя на той же странице при вводе неверного логина/пароля в форме авторизации wp_login_form()
+add_action( 'wp_login_failed', 'wikipress_login_fail' );
+function wikipress_login_fail( $username ) {
+	$referrer = $_SERVER['HTTP_REFERER'];  // откуда пришел запрос
+
+	// Если есть referrer и это не страница wp-login.php
+	if( !empty($referrer) && !strstr($referrer,'wp-login') && !strstr($referrer,'wp-admin') ) {
+		wp_redirect( add_query_arg('login', 'failed', $referrer ) );  // редиркетим и добавим параметр запроса ?login=failed
+		exit;
+	}
+}
+
 /* Connect scripts and styles */
 add_action( 'wp_enqueue_scripts', 'wikipress_scripts' );
 function wikipress_scripts(){
@@ -247,3 +288,5 @@ function wikipress_comment_fields( $fields ){
 
 	return $new_fields;
 }
+
+/* Авторизация */
