@@ -1,16 +1,24 @@
 <?php
-/* пользователь не авторизован */
 if( !is_user_logged_in() ):
-    $var = '<a href="'.site_url( 'registration' ).'">Регистрация</a>';
-    /* Неверный логин/пароль */
     if( $_GET && $_GET['login'] == 'failed' ):
-        echo 'Неверный логин/пароль';
-        wp_login_form(array('remember' => '0'));
-        echo $var;
+    ?>
+    <?php get_header('login'); ?>
+        <h2><?php _e('Login', 'wikipress'); ?></h2>
+        <p class="error"><?php _e('Invalid username / password', 'wikipress'); ?></p>
+        <?php wp_login_form(array('remember' => '0')); ?>
+        
+        <a href="<?php echo site_url( 'registration' ); ?>"><?php _e('Registration', 'wikipress'); ?></a>
+    <?php get_footer('login'); ?>
+    <?php
         exit;
     else:
-        wp_login_form(array('remember' => '0'));
-        echo $var;
+    ?>
+    <?php get_header('login'); ?>
+        <h2><?php _e('Login', 'wikipress'); ?></h2>
+        <?php wp_login_form(array('remember' => '0')); ?>
+        <a href="<?php echo site_url( 'registration' ); ?>"><?php _e('Registration', 'wikipress'); ?></a>
+    <?php get_footer('login'); ?>
+    <?php        
         exit;
     endif;
 endif;

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Wikipress 1.0.0\n"
 "Report-Msgid-Bugs-To: info@yudleethemes.com\n"
 "POT-Creation-Date: 2019-09-26 10:16+0000\n"
-"PO-Revision-Date: 2019-09-30 11:03+0500\n"
+"PO-Revision-Date: 2019-10-11 20:03+0500\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -101,3 +101,33 @@ msgstr "Главная"
 #: single.php:30
 msgid "Last Modified Date"
 msgstr "Дата последнего изменения"
+
+msgid "Manager"
+msgstr "Менеджер"
+
+msgid "Developer"
+msgstr "Разработчик"
+
+msgid "Managers"
+msgstr "Менеджеры"
+
+msgid "Developers"
+msgstr "Разработчики"
+
+msgid "Who can read the rubric"
+msgstr "Кто может читать рубрику"
+
+msgid "Registration"
+msgstr "Регистрация"
+
+msgid "Username"
+msgstr "Имя пользователя"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Login"
+msgstr "Авторизация"
+
+msgid "Invalid username / password"
+msgstr "Неверный логин / пароль"

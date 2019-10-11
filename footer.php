@@ -4,7 +4,7 @@
             <div class="footer__logo col-12 d-flex justify-content-center">
                 <?php if (has_custom_logo()) : the_custom_logo(); else: ?>
                     <img src="<?php echo get_template_directory_uri() . '/img/logo-footer.png'; ?>"
-                         alt="<?php _e('Logo', 'wikipress'); ?>">
+                        alt="<?php _e('Logo', 'wikipress'); ?>">
                 <?php endif; ?>
             </div>
         </div>

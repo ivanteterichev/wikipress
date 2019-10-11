@@ -1,44 +1,86 @@
 <?php
-/*
-if( !current_user_can('manage_options') ){
-    //wp_redirect( site_url().'/login/' );
-    load_template( get_template_directory().'/login.php', true );
-    exit;
+/* Roles */
+$wikipress_role = new WP_Roles();
+if( false == $wikipress_role->is_role('wikipress_manager') ){
+    add_role( 'wikipress_manager', __('Manager', 'wikipress'),
+        array(
+            'read' => true,
+        )
+    );
 }
-*/
+if( false == $wikipress_role->is_role('wikipress_developer') ){
+    add_role( 'wikipress_developer', __('Developer', 'wikipress'),
+        array(
+            'read' => true,
+        )
+    );
+}
 
-
-/* пользователь авторизован */
-//if( is_user_logged_in() ){
-    /* пользователь админ */
-//    if( current_user_can('manage_options') ){
-//        wp_redirect( admin_url() );
-//    }
-    /* пользователь не админ */
-//    else{
-//        wp_redirect( site_url() );
-//    }
-//}
-//else{
-    //load_template( get_template_directory().'/include/authorize.php', true );
-    //exit;
-//}
-
-
-
-
-
-## Оставляет пользователя на той же странице при вводе неверного логина/пароля в форме авторизации wp_login_form()
 add_action( 'wp_login_failed', 'wikipress_login_fail' );
 function wikipress_login_fail( $username ) {
-	$referrer = $_SERVER['HTTP_REFERER'];  // откуда пришел запрос
-
-	// Если есть referrer и это не страница wp-login.php
+	$referrer = $_SERVER['HTTP_REFERER'];
+    
 	if( !empty($referrer) && !strstr($referrer,'wp-login') && !strstr($referrer,'wp-admin') ) {
-		wp_redirect( add_query_arg('login', 'failed', $referrer ) );  // редиркетим и добавим параметр запроса ?login=failed
+		wp_redirect( add_query_arg('login', 'failed', $referrer ) );
 		exit;
 	}
 }
+
+/* Admin */
+$taxname = 'category';
+
+add_action("{$taxname}_add_form_fields", 'wikipress_add_new_custom_fields');
+function wikipress_add_new_custom_fields( $taxonomy_slug ){
+    ?>
+    <div class="form-field">
+        <label><b><?php _e('Who can read the rubric', 'wikipress'); ?></b></label>
+        <label><input type="radio" name="extra[robotmeta]" value="wikipress_manager" /> <?php _e('Managers', 'wikipress'); ?></label>
+        <label><input type="radio" name="extra[robotmeta]" value="wikipress_developer" /> <?php _e('Developers', 'wikipress'); ?></label>
+    </div>
+    <?php
+}
+
+add_action("{$taxname}_edit_form_fields", 'wikipress_edit_new_custom_fields');
+function wikipress_edit_new_custom_fields( $term ){
+    ?>
+    <tr class="form-field">
+        <th scope="row" valign="top"><label><b><?php _e('Who can read the rubric', 'wikipress'); ?></b></label></th>
+        <td>
+            <?php $mark_v = get_term_meta( $term->term_id, 'robotmeta', 1 ); ?>
+            <p><input type="radio" name="extra[robotmeta]" value="wikipress_manager" <?php checked( $mark_v, 'wikipress_manager' ); ?> /> <?php _e('Managers', 'wikipress'); ?></p>
+            <p><input type="radio" name="extra[robotmeta]" value="wikipress_developer" <?php checked( $mark_v, 'wikipress_developer' ); ?> /> <?php _e('Developers', 'wikipress'); ?></p>
+        </td>
+    </tr>
+    <?php
+}
+
+add_action("create_{$taxname}", 'wikipress_save_custom_taxonomy_meta');
+add_action("edited_{$taxname}", 'wikipress_save_custom_taxonomy_meta');
+function wikipress_save_custom_taxonomy_meta( $term_id ){
+    if ( ! isset( $_POST['extra'] ) ) return;
+    if ( ! current_user_can( 'edit_term', $term_id ) ) return;
+    if (
+		! wp_verify_nonce( $_POST['_wpnonce'], "update-tag_$term_id" ) &&
+		! wp_verify_nonce( $_POST['_wpnonce_add-tag'], "add-tag" )
+	) return;
+    
+	$extra = wp_unslash( $_POST['extra'] );
+    
+    foreach( $extra as $key => $val ){
+        $key = sanitize_key( $key );
+        $val = sanitize_text_field( $val );
+        
+        if( ! $val ){
+            delete_term_meta( $term_id, $key );
+        }
+        else{
+            update_term_meta( $term_id, $key, $val );
+        }
+    }
+    
+    return $term_id;
+}
+
 
 /* Connect scripts and styles */
 add_action( 'wp_enqueue_scripts', 'wikipress_scripts' );
@@ -98,7 +140,7 @@ function wikipress_setup(){
     $GLOBALS['content_width'] = apply_filters( 'wikipress_content_width', 840 );
 }
 
-// Customizer
+/* Customizer */
 add_action('customize_register', 'wikipress_customize_register');
 
 function wikipress_customize_register($wp_customize){
@@ -192,7 +234,7 @@ function wikipress_customize_js(){
     wp_enqueue_script('wikipress-customizer', get_template_directory_uri() . '/assets/js/wikipress-customize.js', array( 'jquery','customize-preview' ), '', true);
 }
 
-// AJAX site search
+/* AJAX site search */
 function wikipress_ajax_search(){
 
 	$args = array(
@@ -288,5 +330,3 @@ function wikipress_comment_fields( $fields ){
 
 	return $new_fields;
 }
-
-/* Авторизация */

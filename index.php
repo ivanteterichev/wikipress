@@ -1,23 +1,40 @@
 <?php get_header(); ?>
 <?php
-$categories = get_categories(array(
+global $wpdb;
+            
+$wikipress_options = array(
     'taxonomy' => 'category',
     'type' => 'post',
     'child_of' => 0,
     'parent' => '',
     'orderby' => 'name',
     'order' => '',
-    'hide_empty' => 1,
+    'hide_empty' => 0,
     'hierarchical' => 1,
     'exclude' => '',
     'include' => '',
     'number' => 0,
     'pad_counts' => false,
-));
+);
+
+if( current_user_can('wikipress_manager') ) {
+    $query = "SELECT term_id FROM $wpdb->termmeta WHERE meta_value = %s";
+    $cat_id = $wpdb->get_var( $wpdb->prepare( $query, 'wikipress_manager' ) );
+    
+    $wikipress_options['include'] = $cat_id;
+}
+elseif( current_user_can('wikipress_developer') ) {
+    $query = "SELECT term_id FROM $wpdb->termmeta WHERE meta_value = %s";
+    $cat_id = $wpdb->get_var( $wpdb->prepare( $query, 'wikipress_developer' ) );
+    
+    $wikipress_options['include'] = $cat_id;
+}
+
+$categories = get_categories( $wikipress_options );
 ?>
 <?php if ($categories): ?>
     <div class="container">
-        <?php foreach ($categories as $k => $v): ?>
+        <?php foreach ( $categories as $k => $v ): ?>
             <section class="section d-flex align-items-center">
                 <div class="row">
                     <div class="col-12">
@@ -25,11 +42,13 @@ $categories = get_categories(array(
                             <h2><?php echo $v->name; ?></h2>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <div class="section__subscription">
-                            <p><?php echo $v->description, 'wikipress'; ?></p>
+                    <?php if( $v->description ): ?>
+                        <div class="col-12">
+                            <div class="section__subscription">
+                                <p><?php echo $v->description, 'wikipress'; ?></p>
+                            </div>
                         </div>
-                    </div>
+                    <?php endif; ?>
                 </div>
             </section>
             <section class="section">
@@ -49,9 +68,7 @@ $categories = get_categories(array(
                         'suppress_filters' => true,
                     ));
                     ?>
-                    <?php foreach ($posts
-
-                                   as $k2 => $post): ?>
+                    <?php foreach ($posts as $k2 => $post): ?>
                         <div id="post-<?php the_ID(); ?>" <?php post_class(['subsection', 'card-wrapper', 'col-xl-4', 'col-lg-12']); ?>>
                             <div class="card d-flex">
                                 <div class="card__title">

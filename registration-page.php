@@ -11,7 +11,6 @@ if( isset($_POST['wp-submit']) ){
 	);
     $user_id = wp_insert_user( $userdata ) ;
 
-	// возврат
 	if( !is_wp_error( $user_id ) ) {
 		wp_redirect( site_url() );
 	}
@@ -19,44 +18,12 @@ if( isset($_POST['wp-submit']) ){
 		echo $user_id->get_error_message();
 	} 
 }
-
+get_header('login');
 ?>
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <style>
-        body{
-            display:flex;
-            flex-flow: row nowrap;
-            align-items: center;
-            background-color:rgba(0,0,0,0.05);
-        }
-        .form{
-            border:1px solid silver;
-            width:320px;
-            margin: 0 auto;
-            padding:20px;
-            background-color:white;
-        }
-        form label{
-            display:block;
-            margin-bottom:5px;
-        }
-        form input[type="text"],form input[type="email"],form input[type="password"]{
-            width:calc(100% - 10px);
-            height:30px;
-            padding:5px;
-        }
-    </style>
-</head>
-<body>
-<div class="form">
-    <h2>Регистрация</h2>
+    <h2><?php _e('Registration', 'wikipress'); ?></h2>
     <form id="registerform" action="" method="post">
         <p>
-            <label for="user_login">Имя пользователя</label>
+            <label for="user_login"><?php _e('Username', 'wikipress'); ?></label>
             <input type="text" name="user_login" id="user_login">
             
         </p>
@@ -65,14 +32,13 @@ if( isset($_POST['wp-submit']) ){
             <input type="email" name="user_email" id="user_email">
         </p>
         <p>
-            <label for="user_pass">Пароль</label>
+            <label for="user_pass"><?php _e('Password', 'wikipress'); ?></label>
             <input type="password" name="user_pass" id="user_pass">
         </p>
-        <!--<p id="reg_passmail">Подтверждение регистрации будет отправлено на ваш e-mail.</p>-->
         <p class="submit">
-            <input type="submit" name="wp-submit" id="wp-submit" value="Регистрация">
+            <input type="submit" name="wp-submit" id="wp-submit" value="<?php __('Registration', 'wikipress'); ?>">
         </p>
+        <a href="<?php echo site_url(); ?>"><?php _e('Login', 'wikipress'); ?></a>
     </form>
-</div>
-</body>
-</html>
+    
+<?php get_footer('login'); ?>

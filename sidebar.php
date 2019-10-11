@@ -14,20 +14,36 @@
     <div class="aside__element d-flex">
         <div class="aside__menu aside-menu">
             <?php
-            $categories = get_categories(array(
+            global $wpdb;
+            
+            $wikipress_options = array(
                 'taxonomy' => 'category',
                 'type' => 'post',
                 'child_of' => 0,
                 'parent' => '',
                 'orderby' => 'name',
                 'order' => '',
-                'hide_empty' => 1,
+                'hide_empty' => 0,
                 'hierarchical' => 1,
                 'exclude' => '',
                 'include' => '',
                 'number' => 0,
                 'pad_counts' => false,
-            ));
+            );
+            
+            if( current_user_can('wikipress_manager') ) {
+                $query = "SELECT term_id FROM $wpdb->termmeta WHERE meta_value = %s";
+                $cat_id = $wpdb->get_var( $wpdb->prepare( $query, 'wikipress_manager' ) );
+                
+                $wikipress_options['include'] = $cat_id;
+            } 
+            elseif( current_user_can('wikipress_developer') ) {
+                $query = "SELECT term_id FROM $wpdb->termmeta WHERE meta_value = %s";
+                $cat_id = $wpdb->get_var( $wpdb->prepare( $query, 'wikipress_developer' ) );
+                
+                $wikipress_options['include'] = $cat_id;
+            }
+            $categories = get_categories( $wikipress_options );
             ?>
             <?php if ($categories): ?>
                 <?php foreach ($categories as $k => $v): ?>
