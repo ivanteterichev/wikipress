@@ -1,6 +1,3 @@
-<?php
-load_template( get_template_directory().'/include/login.php', true );
-?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -55,8 +52,7 @@ load_template( get_template_directory().'/include/login.php', true );
     </style>
 </head>
 <body>
-    <h1><?php echo __('Page Not Found', 'wikipress'); ?></h1>
-    <p><?php echo __( 'Sorry, the page you tried to view does not exist.', 'wikipress'); ?></p>
+    <h1><?php echo _e( 'Page Not Found', 'wikipress' ); ?></h1>
+    <p><?php echo _e( 'Sorry, the page you tried to view does not exist.', 'wikipress' ); ?></p>
 </body>
 </html>
-<!-- IE needs 512+ bytes: https://blogs.msdn.microsoft.com/ieinternals/2010/08/18/friendly-http-error-pages/ -->
