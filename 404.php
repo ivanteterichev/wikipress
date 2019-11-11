@@ -3,56 +3,23 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-
-        * {
-            line-height: 1.2;
-            margin: 0;
-        }
-
-        html {
-            color: #888;
-            display: table;
-            font-family: sans-serif;
-            height: 100%;
-            text-align: center;
-            width: 100%;
-        }
-
-        body {
-            display: table-cell;
-            vertical-align: middle;
-            margin: 2em auto;
-        }
-
-        h1 {
-            color: #555;
-            font-size: 2em;
-            font-weight: 400;
-        }
-
-        p {
-            margin: 0 auto;
-            width: 280px;
-        }
-
-        @media only screen and (max-width: 280px) {
-
-            body, p {
-                width: 95%;
-            }
-
-            h1 {
-                font-size: 1.5em;
-                margin: 0 0 0.3em;
-            }
-
-        }
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat%3A400%2C500%2C700&display=swap&subset=cyrillic&ver=5.2.3">
+    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/assets/css/404.css'; ?>">
 </head>
 <body>
-    <h1><?php echo _e( 'Page Not Found', 'wikipress' ); ?></h1>
-    <p><?php echo _e( 'Sorry, the page you tried to view does not exist.', 'wikipress' ); ?></p>
+    <div class="wrap">
+        <div class="col img"><img src="<?php echo get_template_directory_uri() . '/img/404.svg'; ?>"></div>
+        
+        <div class="col txt">
+            <div class="logo"><img src="<?php echo get_template_directory_uri() . '/img/logo-footer.png'; ?>" alt="Логотип"></div>
+            <div class="txt-item-1"><b>Не переживайте, все в порядке =) просто страница не нашлась...</b></div>
+            <div class="txt-item-2">Такое иногда бывает) Наверное, кто-то где-то ошибся...</div>
+            <div class="txt-btn"><a href="/">Перейти на главную</a></div>
+            <div class="txt-item-2">Вы также можете сообщить нам об этом недоразумении по телефону:</div>
+            <div class="txt-tlf"><a href="tel:+73433456465"><b>+7 (343) 3-456-465</b></a></div>
+        </div>
+    </div>
+    
+    <div class="bottom">© Jumpnet, Разработка веб-сайтов. 2019. Все права защищены.</div>
 </body>
 </html>

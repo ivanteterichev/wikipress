@@ -1,0 +1,135 @@
+@charset "UTF-8";
+body{
+    font-family: "Montserrat", sans-serif;
+    background-color: #F2F2F2;
+    color: #171717;
+}
+a {
+    text-decoration: none;
+}
+div.txt-btn {
+    background-color: #E77E22;
+    text-align: center;
+}
+div.txt-btn a {
+    color: white;
+}
+div.txt-tlf a {
+    color: #171717;
+}
+@media ( min-width: 320px ) {
+    body {
+        font-size: 16px;
+        text-align:center;
+    }
+    div.wrap {
+        padding: 5px;
+    }
+    div.img {
+        text-align: center;
+        padding: 30px 0 50px;
+        border-bottom: 3px dashed #0071BC;
+        margin-bottom: 50px;
+    }
+    div.img img {
+        max-width: 250px;
+    }
+    div.logo {
+        margin-bottom: 10px;
+    }
+    div.logo img {
+        max-width: 150px;
+    }
+    div.txt-item-1 {
+        margin-bottom: 10px;
+    }
+    div.txt-item-2 {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    div.txt-btn {
+        padding: 10px;
+        width: 200px;
+        margin: 0 auto 30px;
+    }
+    div.txt-tlf {
+        margin-bottom: 50px;
+    }
+    div.bottom {
+        margin-bottom: 20px;
+        font-size: 10px;
+    }
+}
+@media ( min-width: 768px ) {
+    html{
+        display: table;
+        height: 100%;
+        width: 100%;
+    }
+    body {
+        display: table-cell;
+        vertical-align: middle;
+        margin: 2em auto;
+    }
+    div.wrap {
+        display: table;
+        width: 700px;
+        margin: 0 auto 50px;
+    }
+    div.col {
+        display: table-cell;
+        vertical-align: middle;
+        width:50%;
+    }
+    div.img {
+        border-bottom: none;
+        margin: 0;
+        padding: 0;
+    }
+    div.img img {
+        max-width: 100%;
+    }
+    div.txt {
+        text-align: left;
+        padding-left: 30px;
+    }
+    div.txt-item-1 {
+        font-size: 17px;
+    }
+    div.txt-item-2 {
+        font-size: 10px;
+    }
+    div.txt-btn {
+        margin: 0 0 20px;
+    }
+    div.txt-btn {
+        font-size: 12px;
+        width: 150px;
+    }
+    div.txt-tlf {
+        margin: 0;
+    }
+    div.bottom {
+        margin: 0;
+    }
+}
+@media ( min-width: 992px ) {
+    div.wrap {
+        width: 900px;
+    }
+    div.logo {
+        margin-bottom: 20px;
+    }
+    div.logo img {
+        max-width: 200px;
+    }
+    div.txt-item-1 {
+        font-size: 22px;
+    }
+    div.txt-item-2 {
+        font-size: 12px;
+    }
+    div.bottom {
+        font-size: 12px;
+    }
+}
