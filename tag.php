@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section__title">
-                        <h2>Записи метки - &laquo;<?php single_tag_title(); ?>&raquo;</h2>
+                        <h2><?php _e('Tag Entries', 'wikipress'); ?> - &laquo;<?php single_tag_title(); ?>&raquo;</h2>
                     </div>
                 </div>
             </div>
