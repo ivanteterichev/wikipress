@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <?php
 global $wpdb;
-             
+            
 $wikipress_options = array (
     'taxonomy' => 'category',
     'type' => 'post',
