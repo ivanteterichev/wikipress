@@ -184,7 +184,8 @@ ul {
     display: inline-block;
     font-size: 22.5px;
     font-weight: 700;
-    line-height: 1.5; }
+    line-height: 1.5;
+    margin-right: 10px; }
   ul li {
     padding: 5px 0; }
   ul span {
