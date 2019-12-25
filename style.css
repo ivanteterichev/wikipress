@@ -580,6 +580,12 @@ ol {
     padding: 50px;
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); }
+    .article-wrapper .article a,
+    .article-wrapper .article a:visited {
+      text-decoration: none;
+      color: #333;
+      padding: 0;
+      display: inline-block; }
     .article-wrapper .article .article__h1 {
       padding-top: 10px;
       padding-bottom: 10px; }

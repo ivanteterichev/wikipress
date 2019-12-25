@@ -23,6 +23,13 @@
         background-color: $ThemeColor;
         padding: 50px;
         box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        a, 
+        a:visited {
+            text-decoration: none;
+            color: $TextColor;
+            padding: 0;
+            display: inline-block;
+        }
         .article__h1 {
             padding-top: 10px;
             padding-bottom: 10px;
