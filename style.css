@@ -1,15 +1,14 @@
 @charset "UTF-8";
 /*
 Theme Name: wikipress
-Theme URI: http://demo.wikipress.jumpnet.ru/
 Author: Andrey Korneev, Ivan Teterichev
+Author URI: https://jumpnet.ru/
 Description: Wikipress, this simple and sophisticated solution for implementing a wiki portal.
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-colors, custom-header, custom-menu, custom-logo, education, three-columns
 Text Domain: wikipress
-Author URI: https://jumpnet.ru/
 */
 * {
   font-family: "Montserrat", sans-serif;
@@ -199,7 +198,8 @@ ol {
     content: counters(item, ".") ". ";
     counter-increment: item;
     color: #E77E22;
-    line-height: 1.75; }
+    line-height: 1.75;
+    margin-right: 5px; }
   ol li {
     display: block;
     padding: 5px 0; }
@@ -648,79 +648,3 @@ ol {
 @media (max-width: 992px) {
   .card a {
     font-size: 14px; } }
-    
-/* Блок Комментарии */
-div.wikipress-list-comments h2{
-    font-size: 22px;
-}
-div.wikipress-list-comments{
-    font-size:10pt;
-}
-div.wikipress-list-comments > ul{
-    padding-left:0;
-}
-div.wikipress-list-comments ul li:before{
-    content:'';
-}
-div.wikipress-list-comments ul ul{
-    margin-left:20px;
-}
-div.wikipress-list-comments div.comment-body{
-    padding: 10px;
-    background-color:white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-div.wikipress-list-comments a{
-    display:inline;
-    padding:0;
-    color:#E77E22;
-}
-p.logged-in-as a{
-    font-size:10pt;
-}
-div.wikipress-list-comments div.commentmetadata{
-    color:silver;
-}
-div.wikipress-list-comments .comment-notes{
-    font-size:10pt;
-}
-#comment{
-    width:100%;
-    border:0;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    padding:20px;
-}
-div.wikipress-list-comments input{
-    background-image: none;
-    padding-left:20px;
-}
-div.wikipress-list-comments label{
-    display:block;
-    font-size:10pt;
-    padding-bottom:10px;
-}
-div.wikipress-list-comments input{
-    vertical-align:middle;
-}
-#commentform label[for="wp-comment-cookies-consent"]{
-    display:inline;
-}
-#submit{
-    padding:12px 24px;
-    background-color: #ff6900;
-    color:white;
-    border:0;
-    font-size: 16px;
-}
-a[rel="tag"]{
-    display:inline;
-    padding:5px;
-    margin-right:5px;
-    background-color:white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-.wikipress-post-navigation a{
-    padding-left:0;
-    padding-right:0;
-    color:#E77E22;
-}
