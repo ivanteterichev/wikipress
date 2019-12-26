@@ -56,14 +56,14 @@
                             <span class="aside-menu-start__img">
                                 <img src="<?php echo get_template_directory_uri() . '/img/arrow.png'; ?>"/>
                             </span>
+                            <ul class="aside-menu__list aside-menu-start__list">
+                                <?php foreach( $posts as $post ) : ?>
+                                    <?php setup_postdata( $post ); ?>
+                                    <li><a href="<?php the_permalink( $post->ID ); ?>"><?php the_title(); ?></a></li>
+                                <?php endforeach;
+                                wp_reset_postdata(); ?>
+                            </ul>
                         </div>
-                        <ul class="aside-menu__list aside-menu-start__list">
-                            <?php foreach( $posts as $post ) : ?>
-                                <?php setup_postdata( $post ); ?>
-                                <li><a href="<?php the_permalink( $post->ID ); ?>"><?php the_title(); ?></a></li>
-                            <?php endforeach;
-                            wp_reset_postdata(); ?>
-                        </ul>
                             <?php else: ?>
                         <div class="aside-menu__navigation aside-menu-navigation aside-menu__setting aside-menu-setting">
                             <div class="aside-menu-navigation__title aside-menu-setting__title"><?php echo $v->name; ?></div>
