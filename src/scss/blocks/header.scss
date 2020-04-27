@@ -1,6 +1,7 @@
 .header {
   height: 360px;
-  background-color: $AccentColor;
+  background: -o-linear-gradient(45deg, #0071BC, #1DB6EF);
+  background: linear-gradient(45deg, #0071BC, #1DB6EF);
   text-align: center;
   padding: 25px;
   .header__title h1 {
