@@ -85,7 +85,7 @@ figcaption {
   color: #B6B6B6 !important; }
 
 blockquote {
-  border-left: 4px solid #E77E22; }
+  border-left: 4px solid #0071BC; }
   blockquote p {
     font-size: 16px;
     font-weight: 400;
@@ -120,8 +120,8 @@ iframe {
   height: 100% !important; }
 
 .wp-block-pullquote {
-  border-top: 4px solid #E77E22;
-  border-bottom: 4px solid #E77E22;
+  border-top: 4px solid #0071BC;
+  border-bottom: 4px solid #0071BC;
   padding: 20px 0; }
   .wp-block-pullquote blockquote {
     border: none; }
@@ -156,7 +156,7 @@ td {
 hr {
   border: none;
   height: 2px;
-  background-color: #E77E22; }
+  background-color: #0071BC; }
 
 input[type="text"] {
   width: 540px;
@@ -180,7 +180,7 @@ ul {
   padding-left: 10px; }
   ul li::before {
     content: "•";
-    color: #E77E22;
+    color: #0071BC;
     display: inline-block;
     font-size: 22.5px;
     font-weight: 700;
@@ -198,7 +198,7 @@ ol {
   ol li::before {
     content: counters(item, ".") ". ";
     counter-increment: item;
-    color: #E77E22;
+    color: #0071BC;
     line-height: 1.75;
     margin-right: 5px; }
   ol li {
@@ -209,7 +209,7 @@ ol {
   margin: 0; }
 
 .wp-block-button__link {
-  background-color: #E77E22;
+  background-color: #0071BC;
   border: none;
   border-radius: 2px;
   -webkit-box-shadow: none;
@@ -574,7 +574,7 @@ ol {
       color: #333;
       padding-right: 5px; }
     .article-wrapper .article-wrapper__navigation .article-wrapper-navigation__article {
-      color: #E77E22;
+      color: #0071BC;
       padding-left: 5px; }
   .article-wrapper .article {
     background-color: #fff;
@@ -642,7 +642,7 @@ ol {
           flex-direction: column; }
   .card a {
     text-decoration: none;
-    color: #E77E22; }
+    color: #0071BC; }
   .card__title {
     margin-top: 0; }
   .card__link {

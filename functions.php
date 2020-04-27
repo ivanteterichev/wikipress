@@ -76,7 +76,7 @@ function wikipress_customize_register( $wp_customize ){
 
     /* Color theme */
     $wp_customize->add_setting( 'wikipress_theme_color', array(
-        'default' => '#e77e22',
+        'default' => '#0071BC',
         'sanitize_callback' => 'sanitize_hex_color',
         'transport'=>'postMessage',
     ) );
