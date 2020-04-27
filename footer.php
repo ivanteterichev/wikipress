@@ -5,7 +5,8 @@
                     <?php if ( has_custom_logo() ) : the_custom_logo(); ?>
                     <?php else: ?>
                         <img src="<?php echo get_template_directory_uri() . '/img/logo-footer.png'; ?>"
-                            alt="<?php _e( 'Logo', 'wikipress' ); ?>">
+                             width="60px"   
+                             alt="<?php _e( 'Logo', 'wikipress' ); ?>">
                     <?php endif; ?>
                 </div>
             </div>
