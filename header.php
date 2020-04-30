@@ -33,7 +33,7 @@
                 <div class="header__input header-input d-flex justify-content-center">
                     <input class="header-input__search-field" 
                            type="text"
-                           placeholder="<?php echo esc_html__( 'Keyword, for example, &laquo;Salary&raquo;, &laquo;Promotion&raquo;, &laquo;About the company&raquo;', 'wikipress' ); ?>">
+                           placeholder="<?php _e( 'Search', 'wikipress' ); ?>">
                     <ul class="header-input__search-result"></ul>
                 </div>
             </div>

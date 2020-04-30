@@ -1,23 +1,11 @@
 // Функционал для реализации адаптивности
 $(function () {
-  $(window).bind('resize', function () {
-      if ($(this).width() > 1800) {
-        $('.header__input > input[type="text"]').attr('placeholder','Ключевое слово, например «Зарплата», «Повышение», «О компании»');
-      }    
-      if (($(this).width() > 992) && ($(this).width() < 1800)) {
-        $('.header__input > input[type="text"]').attr('placeholder','Ключевое слово, например «Зарплата»');
-      }
-      if ($(this).width() < 480) {
-        $('.header__input > input[type="text"]').attr('placeholder','Ключевое слово');
-      }
-      if (($(this).width() > 480) && ($(this).width() < 1800)) {
-        $('.header__input > input[type="text"]').attr('placeholder','Ключевое слово, например «Зарплата»');
-      }      
+  $(window).bind('resize', function () {   
       if ($(this).width() > 768) {
         $('body').removeClass('body--mobile');
         $('.aside').removeClass('aside--mobile');
-		$('.aside-element__logo').removeClass('aside-element__logo--mobile');
-		$('.logo-link').removeClass('logo-link--mobile');
+								$('.aside-element__logo').removeClass('aside-element__logo--mobile');
+								$('.logo-link').removeClass('logo-link--mobile');
       }  
   }).resize();
 })
