@@ -1,4 +1,4 @@
-=== Wikipress ===
+=== WikiPress ===
 Contributors: jumpnet
 Author: Andrey Korneev, Ivan Teterichev, Eugene Shangin
 Author URI: https://jumpnet.ru/
@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Stable tag: custom-colors, custom-header, custom-menu, custom-logo, education, three-columns
 
 == Description ==
-Wikipress, this simple and sophisticated solution for implementing a wiki portal.
+WikiPress, this simple and sophisticated solution for implementing a wiki portal.
 
 * Mobile-first, Responsive Layout
 * Custom Colors
@@ -19,14 +19,14 @@ Wikipress, this simple and sophisticated solution for implementing a wiki portal
 
 == Installation ==
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in Wikipress in the search form and press the 'Enter' key on your keyboard.
+2. Type in WikiPress in the search form and press the 'Enter' key on your keyboard.
 3. Click on the 'Activate' button to use your new theme right away.
-4. Go to https://codex.wordpress.org/Wikipress for a guide on how to customize this theme.
+4. Go to https://codex.wordpress.org/WikiPress for a guide on how to customize this theme.
 5. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Copyright ==
-Wikipress WordPress Theme, Copyright 2019 Jumpnet.ru
-Wikipress is distributed under the terms of the GNU GPL
+WikiPress WordPress Theme, Copyright 2019 Jumpnet.ru
+WikiPress is distributed under the terms of the GNU GPL
 
 == Changelog ==
 = 1.0 =

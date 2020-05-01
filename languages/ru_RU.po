@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Wikipress 1.0.0\n"
+"Project-Id-Version: WikiPress 1.0.0\n"
 "Report-Msgid-Bugs-To: info@yudleethemes.com\n"
 "POT-Creation-Date: 2019-09-26 10:16+0000\n"
 "PO-Revision-Date: 2019-11-12 12:31+0500\n"
@@ -47,12 +47,12 @@ msgid "Search"
 msgstr "Поиск"
 
 #. Name of the theme
-msgid "wikipress"
-msgstr "wikipress"
+msgid "WikiPress"
+msgstr "WikiPress"
 
 #. Description of the theme
-msgid "Wikipress, this simple and sophisticated solution for implementing a wiki portal."
-msgstr "Wikipress, это простое и сложное решение для реализации вики портала."
+msgid "WikiPress, this simple and sophisticated solution for implementing a wiki portal."
+msgstr "WikiPress, это простое и сложное решение для реализации вики портала."
 
 #. Author of the theme
 msgid "Andrey Korneev, Ivan Teterichev, Eugene Shangin"
