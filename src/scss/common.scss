@@ -53,11 +53,11 @@ p {
 
 a, 
 a:visited {
-    text-decoration:none;
-    padding-left:0;
+    text-decoration: none;
+    padding-left: 0;
     color: #0072c0;;
-    padding:15px;
-    display:block;
+    padding: 0;
+    display: inline-block;
     transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     -webkit-transition: all .3s ease-in-out;
@@ -163,21 +163,22 @@ hr {
     background-color:$AccentColor;
 }
 
-input[type="text"] {
+input[type="text"],
+textarea {
     width: 540px;
     height: 50px;
     border: none;
     border-radius: 2px;
-    font-size: 12px;
+    font-size: 14px;
     color: #646464;
-    padding-left: 60px;
+    padding-left: 15px;
     outline: none;
-}
-input {
-    background-image: url('./img/search.png');
-    background-repeat: no-repeat;   
-    background-position: 20px;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+textarea {
+    height: 100px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 ul {
@@ -354,6 +355,51 @@ ol {
     top: 5px;
     width: auto;
     z-index: 100000;
+}
+
+.wikipress-list-comments {
+    ul {
+        li::before {
+            display: none;
+        }
+    }
+    input[type="text"],
+    textarea {
+        width: 100%;
+    }
+    .comment-author {
+        cite {
+            a {
+                font-style: normal;
+                text-decoration: underline;
+                font-size: 16px;
+                padding: 15px;
+                margin-top: -50px;
+                margin-left: 40px;
+                display: block;
+            }
+        }
+    }
+    input[type="submit"] {
+        background-color: $AccentColor;
+        border: none;
+        border-radius: 2px;
+        box-shadow: none;
+        color: $InvertTextColor;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 400;
+        margin: 0;
+        padding: 12px 24px;
+        text-align: center;
+        text-decoration: none;
+        overflow-wrap: break-word;
+        user-select: none;
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 
 

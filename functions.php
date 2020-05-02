@@ -198,7 +198,7 @@ function wikipress_comment( $comment, $args, $depth ) {
             <div id="comment-<?php comment_ID(); ?>" class="comment-body">
                 <div class="comment-author vcard">
                     <?php echo get_avatar( $comment->comment_author_email, $args['avatar_size'] ); ?>
-                    <?php printf( __( '<cite class="fn">%s:</cite>&nbsp;', 'wikipress' ), get_comment_author_link() ) ?>
+                    <?php printf( __( '<cite class="fn">%s</cite>&nbsp;', 'wikipress' ), get_comment_author_link() ) ?>
                     <?php echo edit_comment_link( __( 'Edit', 'wikipress' ), ' ' ); ?>
                 </div>
  

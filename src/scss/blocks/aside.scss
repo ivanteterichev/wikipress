@@ -15,6 +15,13 @@
     .aside__element {
         padding-top: 10px;
         padding-bottom: 10px;
+        .aside__search-field {
+            padding-left: 60px;
+            font-size: 12px;
+            background-image: url('./img/search.png');
+            background-repeat: no-repeat;   
+            background-position: 20px;
+        }
         .aside__search-result {
             width: 90%;
             max-width: 540px;

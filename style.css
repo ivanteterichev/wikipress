@@ -8,7 +8,7 @@ Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-colors, custom-header, custom-menu, custom-logo, education, three-columns
-Text Domain: wikipress
+Text Domain: WikiPress
 */
 * {
   font-family: "Montserrat", sans-serif;
@@ -65,8 +65,8 @@ a:visited {
   text-decoration: none;
   padding-left: 0;
   color: #0072c0;
-  padding: 15px;
-  display: block;
+  padding: 0;
+  display: inline-block;
   -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
@@ -158,22 +158,23 @@ hr {
   height: 2px;
   background-color: #0071BC; }
 
-input[type="text"] {
+input[type="text"],
+textarea {
   width: 540px;
   height: 50px;
   border: none;
   border-radius: 2px;
-  font-size: 12px;
+  font-size: 14px;
   color: #646464;
-  padding-left: 60px;
-  outline: none; }
-
-input {
-  background-image: url("./img/search.png");
-  background-repeat: no-repeat;
-  background-position: 20px;
+  padding-left: 15px;
+  outline: none;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); }
+
+textarea {
+  height: 100px;
+  padding-top: 15px;
+  padding-bottom: 15px; }
 
 ul {
   list-style: none;
@@ -331,6 +332,45 @@ ol {
   width: auto;
   z-index: 100000; }
 
+.wikipress-list-comments ul li::before {
+  display: none; }
+
+.wikipress-list-comments input[type="text"],
+.wikipress-list-comments textarea {
+  width: 100%; }
+
+.wikipress-list-comments .comment-author cite a {
+  font-style: normal;
+  text-decoration: underline;
+  font-size: 16px;
+  padding: 15px;
+  margin-top: -50px;
+  margin-left: 40px;
+  display: block; }
+
+.wikipress-list-comments input[type="submit"] {
+  background-color: #0071BC;
+  border: none;
+  border-radius: 2px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  overflow-wrap: break-word;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+  .wikipress-list-comments input[type="submit"]:hover {
+    cursor: pointer; }
+
 @media (max-width: 992px) {
   h1 {
     font-size: 26px; }
@@ -382,6 +422,11 @@ ol {
   .header .header__title h1 {
     color: #fff; }
   .header .header-input__search-field {
+    padding-left: 60px;
+    font-size: 12px;
+    background-image: url("./img/search.png");
+    background-repeat: no-repeat;
+    background-position: 20px;
     z-index: 3; }
   .header .header-input__search-result {
     width: 540px;
@@ -485,6 +530,12 @@ ol {
   .aside .aside__element {
     padding-top: 10px;
     padding-bottom: 10px; }
+    .aside .aside__element .aside__search-field {
+      padding-left: 60px;
+      font-size: 12px;
+      background-image: url("./img/search.png");
+      background-repeat: no-repeat;
+      background-position: 20px; }
     .aside .aside__element .aside__search-result {
       width: 90%;
       max-width: 540px;

@@ -8,6 +8,11 @@
     color: $InvertTextColor;
   }
   .header-input__search-field {
+    padding-left: 60px;
+    font-size: 12px;
+    background-image: url('./img/search.png');
+    background-repeat: no-repeat;   
+    background-position: 20px;
     z-index: 3;
   }
   .header-input__search-result {
