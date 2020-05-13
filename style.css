@@ -207,7 +207,7 @@ ol {
     padding: 5px 0; }
 
 .wp-block-audio audio {
-  min-width: auto; }
+  min-width: 190px; }
 
 .wp-block-code,
 .wp-block-verse {
