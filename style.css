@@ -209,6 +209,9 @@ ol {
 .wp-block-audio audio {
   min-width: auto; }
 
+.wp-block-code {
+  overflow-x: auto; }
+
 .wp-block-button {
   margin: 0; }
 
