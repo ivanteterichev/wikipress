@@ -206,6 +206,9 @@ ol {
     display: block;
     padding: 5px 0; }
 
+.wp-block-audio audio {
+  min-width: auto; }
+
 .wp-block-button {
   margin: 0; }
 
