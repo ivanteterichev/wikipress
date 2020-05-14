@@ -273,7 +273,8 @@ ol {
   transition: transform .1s ease, -webkit-transform .1s ease !important;
   color: #fff !important; }
 
-.wp-block-categories li a {
+.wp-block-categories li a,
+.wp-block-latest-posts li a {
   display: inline !important;
   line-height: 1.5 !important; }
 
