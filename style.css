@@ -250,6 +250,23 @@ ol {
 .wp-block-pullquote {
   margin: 15px 0 !important; }
 
+.wp-social-link {
+  padding: 0 !important; }
+
+.wp-social-link::before {
+  display: none !important; }
+
+.wp-social-link a {
+  padding: 6px !important;
+  display: block !important;
+  line-height: 0 !important;
+  -webkit-transition: -webkit-transform .1s ease !important;
+  transition: -webkit-transform .1s ease !important;
+  -o-transition: transform .1s ease !important;
+  transition: transform .1s ease !important;
+  transition: transform .1s ease, -webkit-transform .1s ease !important;
+  color: #fff !important; }
+
 .wp-block-gallery li::before {
   display: none; }
 

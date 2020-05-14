@@ -262,6 +262,20 @@ ol {
     margin: 15px 0 !important;
 }
 
+.wp-social-link {
+    padding: 0 !important;
+}
+.wp-social-link::before {
+    display: none !important; 
+}
+.wp-social-link a {
+    padding: 6px !important;
+    display: block !important;
+    line-height: 0 !important;
+    transition: transform .1s ease !important; 
+    color: #fff !important;
+}
+
 .wp-block-gallery {
     li::before {
         display: none;
