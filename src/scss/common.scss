@@ -229,26 +229,35 @@ ol {
 .wp-block-button {
     margin: 0;
 }
-.wp-block-button__link {  
-    background-color: $AccentColor;
-    border: none;
-    border-radius: 2px;
-    box-shadow: none;
-    color: $InvertTextColor;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 16px;
-    font-weight: 400;
-    margin: 0;
-    padding: 12px 24px;
-    text-align: center;
-    text-decoration: none;
-    overflow-wrap: break-word;
-    user-select: none;
+.wp-block-button__link,
+.wp-block-file__button {  
+    background-color: $AccentColor !important;
+    border: none !important;
+    border-radius: 2px !important;
+    box-shadow: none !important;
+    color: $InvertTextColor !important;
+    cursor: pointer !important;
+    display: inline-block !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    margin: 0 !important;
+    padding: 12px 24px !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    overflow-wrap: break-word !important;
+    user-select: none !important;
     &:hover {
-        cursor: pointer;
+        cursor: pointer !important;
     }
 }
+
+.wp-block-file {
+    margin: 15px 0 !important;
+}
+.wp-block-file a {
+    margin: 5px 10px !important;
+}
+
 .wp-block-gallery {
     li::before {
         display: none;

@@ -216,28 +216,36 @@ ol {
 .wp-block-button {
   margin: 0; }
 
-.wp-block-button__link {
-  background-color: #0071BC;
-  border: none;
-  border-radius: 2px;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: 400;
-  margin: 0;
-  padding: 12px 24px;
-  text-align: center;
-  text-decoration: none;
-  overflow-wrap: break-word;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none; }
-  .wp-block-button__link:hover {
-    cursor: pointer; }
+.wp-block-button__link,
+.wp-block-file__button {
+  background-color: #0071BC !important;
+  border: none !important;
+  border-radius: 2px !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #fff !important;
+  cursor: pointer !important;
+  display: inline-block !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+  padding: 12px 24px !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  overflow-wrap: break-word !important;
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+      -ms-user-select: none !important;
+          user-select: none !important; }
+  .wp-block-button__link:hover,
+  .wp-block-file__button:hover {
+    cursor: pointer !important; }
+
+.wp-block-file {
+  margin: 15px 0 !important; }
+
+.wp-block-file a {
+  margin: 5px 10px !important; }
 
 .wp-block-gallery li::before {
   display: none; }
