@@ -281,6 +281,11 @@ ol {
     color: #fff !important;
 }
 
+.wp-block-categories li a {
+    display: inline !important;
+    line-height: 1.5 !important;
+}
+
 .wp-block-gallery {
     li::before {
         display: none;
