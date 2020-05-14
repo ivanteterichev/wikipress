@@ -250,8 +250,14 @@ ol {
 .wp-block-pullquote {
   margin: 15px 0 !important; }
 
+.wp-block-social-links {
+  -webkit-flex-wrap: wrap !important;
+      -ms-flex-wrap: wrap !important;
+          flex-wrap: wrap !important; }
+
 .wp-social-link {
-  padding: 0 !important; }
+  padding: 0 !important;
+  margin-bottom: 8px !important; }
 
 .wp-social-link::before {
   display: none !important; }

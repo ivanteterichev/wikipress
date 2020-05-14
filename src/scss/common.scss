@@ -262,8 +262,13 @@ ol {
     margin: 15px 0 !important;
 }
 
+.wp-block-social-links {
+    flex-wrap: wrap !important;
+}
+
 .wp-social-link {
     padding: 0 !important;
+    margin-bottom: 8px !important;
 }
 .wp-social-link::before {
     display: none !important; 
