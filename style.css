@@ -210,7 +210,8 @@ ol {
   min-width: 190px; }
 
 .wp-block-code,
-.wp-block-verse {
+.wp-block-verse,
+.wp-block-preformatted {
   overflow-x: auto; }
 
 .wp-block-button {
