@@ -160,7 +160,8 @@ hr {
   background-color: #0071BC; }
 
 input[type="text"],
-textarea {
+textarea,
+input[type="search"] {
   width: 540px;
   height: 50px;
   border: none;
@@ -221,7 +222,8 @@ ol {
   margin: 0; }
 
 .wp-block-button__link,
-.wp-block-file__button {
+.wp-block-file__button,
+.wp-block-search__button {
   background-color: #0071BC !important;
   border: none !important;
   border-radius: 2px !important;
@@ -242,8 +244,17 @@ ol {
       -ms-user-select: none !important;
           user-select: none !important; }
   .wp-block-button__link:hover,
-  .wp-block-file__button:hover {
+  .wp-block-file__button:hover,
+  .wp-block-search__button:hover {
     cursor: pointer !important; }
+
+.wp-block-search__input {
+  margin: 5px 0 !important;
+  margin-right: 10px !important;
+  padding-right: 10px !important; }
+
+.wp-block-search__button {
+  margin: 5px 0 !important; }
 
 .wp-block-file {
   margin: 15px 0 !important; }
