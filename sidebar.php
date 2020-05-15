@@ -3,8 +3,8 @@
         <?php if ( has_custom_logo() ) : the_custom_logo(); else : ?>
             <a class='logo-link' href='/index.php'>
                 <img src="<?php echo get_template_directory_uri() . '/img/logo.png'; ?>" 
-                     width="150px" 
-                     alt="<?php _e( 'Logo', 'wikipress' ); ?>">
+                width="150px" 
+                alt="<?php _e( 'Logo', 'wikipress' ); ?>">
             </a>
         <?php endif; ?>
     </div>
@@ -65,23 +65,24 @@
                                 wp_reset_postdata(); ?>
                             </ul>
                         </div>
-                            <?php else: ?>
-                        <div class="aside-menu__navigation aside-menu-navigation aside-menu__setting aside-menu-setting">
-                            <div class="aside-menu-navigation__title aside-menu-setting__title"><?php echo $v->name; ?></div>
-                            <span class="aside-menu-setting__img">
-                                <img src="<?php echo get_template_directory_uri() . '/img/arrow.png'; ?>"/>
-                            </span>
-                        </div>
-                        <ul class="aside-menu__list aside-menu-setting__list">
-                            <?php foreach( $posts as $post ) : ?>
-                                <?php setup_postdata( $post ); ?>
-                                <li><a href="<?php the_permalink( $post->ID ); ?>"><?php the_title(); ?></a></li>
-                            <?php endforeach;
-                            wp_reset_postdata(); ?>
-                        </ul>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-            <?php endif; ?>
+                        <?php else: ?>
+                            <div class="aside-menu__navigation aside-menu-navigation aside-menu__setting aside-menu-setting">
+                                <div class="aside-menu-navigation__title aside-menu-setting__title"><?php echo $v->name; ?></div>
+                                <span class="aside-menu-setting__img">
+                                    <img src="<?php echo get_template_directory_uri() . '/img/arrow.png'; ?>"/>
+                                </span>
+                                
+                                <ul class="aside-menu__list aside-menu-setting__list">
+                                    <?php foreach( $posts as $post ) : ?>
+                                        <?php setup_postdata( $post ); ?>
+                                        <li><a href="<?php the_permalink( $post->ID ); ?>"><?php the_title(); ?></a></li>
+                                    <?php endforeach;
+                                    wp_reset_postdata(); ?>
+                                </ul>
+                            </div>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </div>
         </div>
-    </div>
-</aside>
+    </aside>
