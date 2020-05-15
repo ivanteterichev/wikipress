@@ -308,6 +308,12 @@ ol {
     }
 }
 
+.wp-block-latest-comments {
+    li::before {
+        display: none;
+    }
+}
+
 .page-content-wrapper {
     min-width: 0;
     margin-left: 350px;
