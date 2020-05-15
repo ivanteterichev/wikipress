@@ -93,59 +93,6 @@ function wikipress_customize_register( $wp_customize ){
     );
 }
 
-add_action( 'wp_head', 'wikipress_customize_css' );
-function wikipress_customize_css() {
-    ?>
-    <style type="text/css">
-        header,
-        [data-theme-color="bg"] {
-            background-color: <?php get_theme_mod( 'wikipress_theme_color' ); ?>;
-        }
-        .card a {
-            color: <?php get_theme_mod( 'wikipress_theme_color' ); ?>;
-        }
-
-        [data-theme-color="text"] {
-            color: <?php get_theme_mod( 'wikipress_theme_color' ); ?>;
-        }
-
-        blockquote {
-            border-left-color: <?php get_theme_mod( 'wikipress_theme_color' ); ?>;
-        }
-
-        .wp-block-button a {
-            background-color: <?php get_theme_mod( 'wikipress_theme_color' ); ?>;
-        }
-
-        ul li:before,
-        ol li:before {
-            color: <?php get_theme_mod( 'wikipress_theme_color' ); ?>;
-        }
-
-        figure.wp-block-pullquote {
-            border-top-color: <?php get_theme_mod( 'wikipress_theme_color' ); ?>;
-            border-bottom-color: <?php get_theme_mod( 'wikipress_theme_color' ); ?>;
-        }
-        
-        cite.fn a {
-            color: <?php get_theme_mod( 'wikipress_theme_color' ); ?>;
-        }
-        
-        div.wikipress-list-comments a {
-            color: <?php get_theme_mod( 'wikipress_theme_color' ); ?>;
-        }
-        
-        #submit {
-            background-color: <?php get_theme_mod( 'wikipress_theme_color' ); ?>;
-        }
-        
-        .wikipress-post-navigation a {
-            color: <?php get_theme_mod( 'wikipress_theme_color' ); ?>;
-        }
-    </style>
-    <?php
-}
-
 add_action( 'customize_preview_init', 'wikipress_customize_js' );
 function wikipress_customize_js() {
     wp_enqueue_script( 'wikipress-customizer', get_template_directory_uri() . '/assets/js/wikipress-customize.js', array( 'jquery','customize-preview' ), '', true );
@@ -165,9 +112,9 @@ function wikipress_ajax_search() {
 
     $query = new WP_Query( $args );
 
-	if( $query->have_posts() ) {
+    if( $query->have_posts() ) {
         while ( $query->have_posts() ) { $query->the_post();
-?>
+            ?>
             <li>
                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 <?php the_excerpt();?>
@@ -176,7 +123,7 @@ function wikipress_ajax_search() {
         }
     }
     else {
-            ?>
+        ?>
         <li>
             <a href="#"><?php _e( 'Nothing found, try another query', 'wikipress' ); ?></a>
         </li>
@@ -193,58 +140,58 @@ function wikipress_comment( $comment, $args, $depth ) {
     $GLOBALS['comment'] = $comment;
     switch ( $comment->comment_type ) :
         case '' :
-?>
-       <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+        ?>
+        <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
             <div id="comment-<?php comment_ID(); ?>" class="comment-body">
                 <div class="comment-author vcard">
                     <?php echo get_avatar( $comment->comment_author_email, $args['avatar_size'] ); ?>
                     <?php printf( __( '<cite class="fn">%s</cite>&nbsp;', 'wikipress' ), get_comment_author_link() ) ?>
                     <?php echo edit_comment_link( __( 'Edit', 'wikipress' ), ' ' ); ?>
                 </div>
- 
+                
                 <div class="comment-meta commentmetadata">
                     <?php printf( __( '%1$s at %2$s', 'wikipress' ), get_comment_date(),  get_comment_time() ); ?>
                 </div>
- 
-<?php if ( $comment->comment_approved == '0' ) : ?>
-                <div class="comment-awaiting-verification"><?php _e( 'Your comment is awaiting moderation.', 'wikipress' ) ?></div>
-             <br />
-<?php endif; ?>
+                
+                <?php if ( $comment->comment_approved == '0' ) : ?>
+                    <div class="comment-awaiting-verification"><?php _e( 'Your comment is awaiting moderation.', 'wikipress' ) ?></div>
+                    <br />
+                <?php endif; ?>
                 <?php comment_text() ?>
                 <div class="reply">
                     <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
                 </div>
             </div>
- 
-<?php
-        break;
-        case 'pingback'  :
-        case 'trackback' :
-?>
+            
+            <?php
+            break;
+            case 'pingback'  :
+            case 'trackback' :
+            ?>
             <li class="post pingback">
                 <?php comment_author_link(); ?>
                 <?php edit_comment_link( _e( 'Edit', 'wikipress' ), ' ' ); ?>
-<?php
-        break;
-    endswitch;
-}
+                <?php
+                break;
+            endswitch;
+        }
 
 
-add_filter( 'comment_form_fields', 'wikipress_comment_fields' );
-function wikipress_comment_fields( $fields ){
+        add_filter( 'comment_form_fields', 'wikipress_comment_fields' );
+        function wikipress_comment_fields( $fields ){
 
-	$new_fields = array();
+           $new_fields = array();
 
-	$myorder = array( 'author', 'email', 'url', 'comment' );
+           $myorder = array( 'author', 'email', 'url', 'comment' );
 
-	foreach( $myorder as $key ){
-		$new_fields[ $key ] = $fields[ $key ];
-		unset( $fields[ $key ] );
-	}
+           foreach( $myorder as $key ){
+              $new_fields[ $key ] = $fields[ $key ];
+              unset( $fields[ $key ] );
+          }
 
-	if ( $fields )
-		foreach( $fields as $key => $val )
-			$new_fields[ $key ] = $val;
+          if ( $fields )
+              foreach( $fields as $key => $val )
+                 $new_fields[ $key ] = $val;
 
-	return $new_fields;
-}
+             return $new_fields;
+         }
