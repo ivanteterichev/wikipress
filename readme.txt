@@ -1,6 +1,6 @@
 === WikiPress ===
 Contributors: jumpnet
-Author: Andrey Korneev, Ivan Teterichev, Eugene Shangin
+Author: Andrey Korneev (https://github.com/ofortnik), Ivan Teterichev (https://github.com/ivanteterichev), Eugene Shangin (https://github.com/fessracha)
 Author URI: https://jumpnet.ru/
 Requires at least: WordPress 4.4
 Tested up to: WordPress 5.2.3
