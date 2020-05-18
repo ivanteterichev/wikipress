@@ -1,7 +1,6 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-    <title><?php _e( 'Page Not Found', 'wikipress' ); ?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat%3A400%2C500%2C700&display=swap&subset=cyrillic&ver=5.2.3">

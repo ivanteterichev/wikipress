@@ -470,6 +470,17 @@ ol {
     }
 }
 
+.pagination {
+    margin: 20px 0;
+    font-weight: 600;
+
+    span, a {
+        font-weight: 500;
+        margin-left: 5px;
+    }
+    
+}
+
 
 @media (max-width: 992px) {
     h1 {

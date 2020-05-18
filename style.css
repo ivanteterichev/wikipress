@@ -435,6 +435,13 @@ ol {
   .wikipress-list-comments input[type="submit"]:hover {
     cursor: pointer; }
 
+.pagination {
+  margin: 20px 0;
+  font-weight: 600; }
+  .pagination span, .pagination a {
+    font-weight: 500;
+    margin-left: 5px; }
+
 @media (max-width: 992px) {
   h1 {
     font-size: 26px; }
