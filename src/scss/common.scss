@@ -326,6 +326,13 @@ ol {
     }
 }
 
+.wp-block-rss {
+    .wp-block-rss__item {
+        display: flex;
+        align-items: center;
+    }
+}
+
 .wikipress-post-navigation {
     a {
         overflow-x: auto;
