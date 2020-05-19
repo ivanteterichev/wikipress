@@ -232,14 +232,14 @@ ol {
 }
 
 .wp-block-button {
-    margin: 0;
+    margin: 5px 0;
 }
 .wp-block-button__link,
 .wp-block-file__button,
 .wp-block-search__button {  
     background-color: $AccentColor !important;
     border: none !important;
-    border-radius: 2px !important;
+    border-radius: 2.5px !important;
     box-shadow: none !important;
     color: $InvertTextColor !important;
     cursor: pointer !important;
@@ -254,6 +254,18 @@ ol {
     user-select: none !important;
     &:hover {
         cursor: pointer !important;
+    }
+}
+.is-style-outline {
+    .wp-block-button__link {
+        background-color: $ThemeColor !important;
+        color: $AccentColor !important;
+        border: solid 1.5px $AccentColor !important;
+    }
+}
+.is-style-squared {
+    .wp-block-button__link {
+        border-radius: 0 !important;
     }
 }
 

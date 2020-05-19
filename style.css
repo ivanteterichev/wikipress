@@ -219,14 +219,14 @@ ol {
   overflow-x: auto; }
 
 .wp-block-button {
-  margin: 0; }
+  margin: 5px 0; }
 
 .wp-block-button__link,
 .wp-block-file__button,
 .wp-block-search__button {
   background-color: #0071BC !important;
   border: none !important;
-  border-radius: 2px !important;
+  border-radius: 2.5px !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   color: #fff !important;
@@ -247,6 +247,14 @@ ol {
   .wp-block-file__button:hover,
   .wp-block-search__button:hover {
     cursor: pointer !important; }
+
+.is-style-outline .wp-block-button__link {
+  background-color: #fff !important;
+  color: #0071BC !important;
+  border: solid 1.5px #0071BC !important; }
+
+.is-style-squared .wp-block-button__link {
+  border-radius: 0 !important; }
 
 .wp-block-search__input {
   margin: 5px 0 !important;
