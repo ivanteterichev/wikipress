@@ -317,6 +317,11 @@ ol {
 .page-content-wrapper {
     min-width: 0;
     margin-left: 350px;
+    .container {
+        h3 {
+            overflow-x: auto;
+        }
+    }
 }
 
 .top-panel {

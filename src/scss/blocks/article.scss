@@ -6,6 +6,7 @@
     padding-top: 100px;
     .article-wrapper__navigation {
         padding: 10px 0;
+        overflow-x: auto;
         .article-wrapper-navigation {
             font-size: 16px;
             font-weight: 500;
@@ -33,6 +34,7 @@
         .article__h1 {
             padding-top: 10px;
             padding-bottom: 10px;
+            overflow-x: auto;
         }
         .article__h2 {
             padding-top: 20px;

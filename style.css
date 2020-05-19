@@ -302,6 +302,8 @@ ol {
 .page-content-wrapper {
   min-width: 0;
   margin-left: 350px; }
+  .page-content-wrapper .container h3 {
+    overflow-x: auto; }
 
 .top-panel {
   display: none;
@@ -688,7 +690,8 @@ ol {
 .article-wrapper {
   padding-top: 100px; }
   .article-wrapper .article-wrapper__navigation {
-    padding: 10px 0; }
+    padding: 10px 0;
+    overflow-x: auto; }
     .article-wrapper .article-wrapper__navigation .article-wrapper-navigation {
       font-size: 16px;
       font-weight: 500; }
@@ -711,7 +714,8 @@ ol {
       display: inline-block; }
     .article-wrapper .article .article__h1 {
       padding-top: 10px;
-      padding-bottom: 10px; }
+      padding-bottom: 10px;
+      overflow-x: auto; }
     .article-wrapper .article .article__h2 {
       padding-top: 20px; }
     .article-wrapper .article .article__h3 {
@@ -770,7 +774,8 @@ ol {
     text-decoration: none;
     color: #0071BC; }
   .card__title {
-    margin-top: 0; }
+    margin-top: 0;
+    overflow-x: auto; }
   .card__link {
     margin-top: auto;
     margin-left: -10px; }
