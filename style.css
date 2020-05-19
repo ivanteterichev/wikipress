@@ -705,7 +705,8 @@ ol {
     background-color: #fff;
     padding: 40px;
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); }
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; }
     .article-wrapper .article a,
     .article-wrapper .article a:visited {
       text-decoration: none;
