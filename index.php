@@ -21,7 +21,7 @@ $categories = get_categories( $wikipress_options );
 <?php if ( $categories ) : ?>
     <div class="container">
         <?php foreach ( $categories as $k => $v ) : ?>
-            <section class="section d-flex align-items-center">
+            <section class="section d-flex justify-content-center align-items-center">
                 <div class="row">
                     <div class="col-12">
                         <div class="section__title">
