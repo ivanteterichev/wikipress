@@ -334,6 +334,9 @@ ol {
 .page-content-wrapper {
     min-width: 0;
     margin-left: 350px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     .container {
         h3 {
             overflow-x: auto;
