@@ -794,7 +794,8 @@ ol {
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+  background: #fff; }
   .card a {
     text-decoration: none;
     color: #0071BC; }
